@@ -4,7 +4,7 @@ import { extractTime } from "../../utils/extractTime.js";
 import useConversation from "../../zustand/useConversation.js";
 import {BsCheck2All} from "react-icons/bs";
 
-const Message = ({ message, seen }) => {
+const Message = ({ message }) => {
 	const { authUser } = useAuthContext();
 	const { selectedConversation } = useConversation();
 	const fromMe = message.senderID === authUser._id;
@@ -22,11 +22,10 @@ const Message = ({ message, seen }) => {
 					<img alt='Tailwind CSS chat bubble component' src={profilePicture} />
 				</div>
 			</div>
-			<div className={`chat-bubble text-white ${bubbleBgColor} ${shakeClass} pb-2 flex items-end gap-2`}>{message.message}
-				<div className={`${seen ? "text-blue-500" : ""}`}><BsCheck2All size={16} /></div>
-			</div>
+			<div className={`chat-bubble text-white ${bubbleBgColor} ${shakeClass} pb-2`}>{message.message}</div>
 			<div className='chat-footer opacity-50 text-xs flex gap-1 items-center'>{formattedTime}</div>
 		</div>
 	);
 };
 export default Message;
+{/* <div className={`${seen ? "text-blue-500" : ""}`}><BsCheck2All size={16} /></div> */}

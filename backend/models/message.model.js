@@ -12,18 +12,18 @@ const messageSchema = new mongoose.Schema(
 			ref: "User",
 			required: true,
 		},
-		conversationID: {
-			type: mongoose.Schema.Types.ObjectId,
-			ref: "Conversation"
-		},
 		message: {
 			type: String,
 			required: true,
-		},
-		seen: {
-			type: Boolean,
-			default: false,
 		}
+		// image: {
+		// 	type: String,
+		// 	default: ""
+		// }
+		// seen: {
+		// 	type: Boolean,
+		// 	default: false,
+		// }
 	},
 	{ timestamps: true }
 );

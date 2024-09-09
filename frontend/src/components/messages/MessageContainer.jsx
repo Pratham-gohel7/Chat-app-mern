@@ -11,10 +11,6 @@ const MessageContainer = ({visibility}) => {
     useEffect(() => {
       return () => setSelectedConversation(null);
     }, [setSelectedConversation])
-
-    // useEffect(() => {
-    //   const lastMessageIsFomUser = Messages.length && Messages
-    // }, [])
     
   return (
     <div className={`w-[600px] md:min-w-[450px] md:flex md:flex-col md:w-[190px] ${visibility} flex flex-col`}>
